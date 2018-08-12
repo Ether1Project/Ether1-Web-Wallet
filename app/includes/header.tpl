@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mewApp">
 <head>
+<style>
+#logoPicture img {
+    height: 70px;
+}
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>MyEtherWallet.com</title>
-<meta property="og:title" content="MyEtherWallet.com: Your Key to Ethereum">
-<meta property="og:site_name" content="MyEtherWallet.com: Your Key to Ethereum">
-<meta name="twitter:title" content="MyEtherWallet.com: Your Key to Ethereum">
-<meta name="apple-mobile-web-app-title" content="MyEtherWallet.com: Your Key to Ethereum">
-<link href="https://www.myetherwallet.com" rel="canonical">
-<meta content="https://www.myetherwallet.com" property="og:url">
-<meta content="https://www.myetherwallet.com" name="twitter:url">
+<title>Ether-1 Wallet</title>
+<meta property="og:title" content="Ether-1 Wallet">
+<meta property="og:site_name" content="Ether-1 Wallet">
+<meta name="twitter:title" content="Ether-1 Wallet">
+<meta name="apple-mobile-web-app-title" content="Ether-1 Wallet">
+<link href="https://www.ether1.org" rel="canonical">
+<meta content="https://www.ether1.org" property="og:url">
+<meta content="https://www.ether1.org" name="twitter:url">
 <link rel="stylesheet" href="css/etherwallet-master.min.css">
 <script type="text/javascript" src="js/etherwallet-static.min.js"></script>
 <script type="text/javascript" src="js/etherwallet-master.js"></script>
-<meta name="description" content="MyEtherWallet (MEW) is a free, open-source, client-side interface for generating Ethereum wallets & more. Interact with the Ethereum blockchain easily & securely.">
+<meta name="description" content="Ether-1 wallet is client-side interface for generating Ether-1 wallets & more. Interact with the Ether-1 blockchain easily & securely.">
 <meta property="og:description"  content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
 <meta name="twitter:description" content="Free, open-source, client-side Ethereum wallet. Enabling you to interact with the blockchain easily & securely.">
 <meta name="robots" content="index,follow">
 <meta name="googlebot" content="index,follow">
 <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM" />
-<link href="images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="images/fav/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
-<link href="images/fav/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
-<link href="images/fav/manifest.json" rel="manifest">
-<link href="images/fav/safari-pinned-tab.svg" rel="mask-icon" color="#2f99b0">
-<link href="images/fav/favicon.ico" rel="shortcut icon">
-<meta name="apple-mobile-web-app-title" content="MyEtherWallet &middot; Your Key to Ethereum">
-<meta name="application-name" content="MyEtherWallet">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.ether1.org/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.ether1.org/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.ether1.org/favicon-16x16.png">
+<link rel="manifest" href="https://www.ether1.org/site.webmanifest">
+<link rel="mask-icon" href="https://www.ether1.org/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-title" content="Ether-1 Wallet &middot; Your Key to Ether-1">
+<meta name="application-name" content="Ether-1 Wallet">
 <meta name="msapplication-config" content="images/fav/browserconfig.xml">
 <meta name="theme-color" content="#1d6986">
 <meta name="apple-mobile-web-app-status-bar-style" content="#1d6986">
-<meta property="og:url" content="https://www.myetherwallet.com" />
-<meta property="og:title" content="MyEtherWallet.com  &middot; Your Key to Ethereum" />
+<meta property="og:url" content="https://www.ether1.org" />
+<meta property="og:title" content="Ether-1 Wallet  &middot; Your Key to Ether-1" />
 <meta property="og:type" content="website">
-<meta property="og:image" content="/images/myetherwallet-logo-banner.png" />
-<meta property="og:image" content="/images/myetherwallet-logo.png" />
-<meta property="og:image" content="/images/myetherwallet-logo-square.png" />
-<meta property="og:image" content="/images/myetherwallet-banner-fun.jpg" />
-<meta name="twitter:image" content="/images/myetherwallet-logo-twitter.png">
+<meta property="og:image" content="/images/ether1-logo-banner.png" />
+<meta property="og:image" content="/images/ether1-logo.png" />
+<meta property="og:image" content="/images/ether1-logo-square.png" />
+<meta property="og:image" content="/images/ether1-banner-fun.jpg" />
+<meta name="twitter:image" content="/images/ether1-logo-twitter.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@MyEtherWallet">
-<meta name="twitter:creator" content="@MyEtherWallet">
+<meta name="twitter:site" content="@ether1official">
+<meta name="twitter:creator" content="@ether1official">
 <script type="application/ld+json">
 {
 "@context": "http://schema.org",
 "@type" : "Organization",
-"name" : "MyEtherWallet",
-"legalName" : "MyEtherWallet Inc",
-"url" : "https://www.myetherwallet.com/",
+"name" : "Ether-1 Wallet",
+"legalName" : "Ether-1 Wallet",
+"url" : "https://www.ether1.org/",
 "contactPoint" : [{
   "@type" : "ContactPoint",
-  "email" : "support@myetherwallet.com",
-  "url"   : "https://myetherwallet.com",
+  "email" : "support@ether1.org",
+  "url"   : "https://ether1.org",
   "contactType" : "customer service"
 }],
-"logo" : "https://www.myetherwallet.com/images/myetherwallet-logo.png",
-"description": "MyEtherWallet.com is a free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely.",
+"logo" : "images/logo.png",
+"description": "Ether-1 Wallet is an open-source, client-side interface for generating Ether-1 wallets &amp; more. Interact with the Ether-1 blockchain easily &amp; securely.",
 "sameAs" : [
-  "https://www.myetherwallet.com/",
-  "https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm",
-  "https://www.facebook.com/MyEtherWallet/",
-  "https://twitter.com/myetherwallet",
-  "https://medium.com/@myetherwallet",
-  "https://myetherwallet.github.io/knowledge-base/",
-  "https://github.com/kvhnuke/etherwallet",
-  "https://github.com/MyEtherWallet",
-  "https://kvhnuke.github.io/etherwallet/","https://myetherwallet.slack.com/"
+  "https://www.ether1.org/",
+  "https://twitter.com/ether1official"
 ]
 }
 </script>
@@ -80,7 +79,7 @@
     <div class="container">
       DON'T GET PHISHED, please! 🎣 Thank you! 🤗
       <br />
-      1. BOOKMARK <a href="https://www.myetherwallet.com"> MYETHERWALLET.COM </a>
+      1. BOOKMARK <a href="https://wallet.ether1.org">WALLET.ETHER1.ORG </a>
       <span class="hidden-xs">
         &nbsp;&nbsp;&nbsp;&nbsp;
         2. INSTALL <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener noreferrer">EAL</a>
@@ -95,24 +94,20 @@
 
 <section class="bg-gradient header-branding">
   <section class="container">
+   <div id="logoPicture">
     @@if (site === 'mew' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="MyEtherWallet" />
-        <p class="small visible-xs">3.21.19</p>
+        <img src="https://www.ether1.org/images/logo.png" alt="Ether1" />
+        <p class="small visible-xs">1.0.1</p>
       </a>
     }
-    @@if (site === 'cx'  ) {
-      <a class="brand" href="/cx-wallet.html" aria-label="Go to homepage">
-        <img src="images/logo-myetherwalletcx.svg" height="64px" width="245px" alt="MyEtherWallet" />
-        <p class="small visible-xs">3.21.19</p>
-      </a>
-    }
+    </div>
     <div class="tagline">
 
-    <span class="hidden-xs">3.21.19</span>
+    <span class="hidden-xs">1.0.1</span>
 
     <span class="dropdown dropdown-lang" ng-cloak>
-      <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
+      <a tabindex="0"  aria-haspopup="true" aria-expanded="false" aria-label="change language. current language {{curLang}}" class="dropdown-toggle  btn btn-white" ng-click="dropdown = !dropdown">{{curLang}}<i class="caret"></i></a>
       <ul class="dropdown-menu" ng-show="dropdown">
         <li><a ng-class="{true:'active'}[curLang=='Català']"          ng-click="changeLanguage('ca','Català'         )"> Català          </a></li>
         <li><a ng-class="{true:'active'}[curLang=='Deutsch']"         ng-click="changeLanguage('de','Deutsch'        )"> Deutsch         </a></li>
@@ -172,6 +167,14 @@
              rel="noopener noreferrer"></a>
         </div>
       </ul>
+      <p class="dropdown-gas__msg"
+         ng-show="gasPriceMsg"
+         ng-hide="ajaxReq.type!='ETH'">
+        The network is really full right now. Check
+        <a href="https://ethgasstation.info/"
+           target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
+        for gas price to use.
+      </p>
     </span>
 
     <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
@@ -204,14 +207,6 @@
 
     </div>
   </section>
-  <p class="dropdown-gas__msg"
-     ng-show="gasPriceMsg"
-     ng-hide="ajaxReq.type!='ETH'">
-    The network is really full right now. Check
-    <a href="https://ethgasstation.info/"
-       target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
-    for gas price to use.
-  </p>
 </section>
 
 <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">

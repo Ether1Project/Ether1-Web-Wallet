@@ -2,7 +2,7 @@
 .header-branding {
   color: white;
   padding: 0;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 900px) {
     text-align: center;
   }
   .container {
@@ -15,12 +15,11 @@
     }
   }
   .brand {
-    float: left;
-    @media screen and (max-width: 900px) {
-      float: none;
-    }
     img {
       padding: @space-xs 0;
+      @media screen and (max-width: 900px) {
+        max-width: 10rem;
+      }
     }
   }
   .tagline {
@@ -54,33 +53,26 @@
     transition: 250ms all ease;
   }
   .dropdown {
-    padding: .1rem;
+    padding: .2rem;
   }
   @media screen and (max-width: 900px) {
     .dropdown {
-      padding: .1rem 0;
+      padding: .2rem 0;
       white-space: nowrap;
       display: inline-block;
       font-size: 14px;
       .dropdown-menu {
-        right: 0;
-        overflow-y: auto;
+        right: -10px;
         left: auto;
         min-width: auto;
         left: auto;
-        top: 100%;
+        top: 2.45rem;
         font-size: 14px;
         & > li > a {
           font-size: 14px;
           padding: @space-xs 30px @space-xs 15px;
           position: relative;
         }
-      }
-    }
-    .dropdown-gas {
-      white-space: normal;
-      .dropdown-menu {
-        right: 0 !important;
       }
     }
   }
@@ -90,13 +82,18 @@
   }
   .dropdown-gas {
     display: inline-block;
-    .dropdown-menu{
+    @media screen and (max-width: 900px) {
+      margin-bottom: 1.8rem;
+    }
+    .dropdown-toggle {
       min-width: 200px;
+    }
+    .dropdown-menu{
+      min-width: 100%;
       padding: .5rem;
-      margin: .1rem 0 0;
-      right: .1rem;
-      left: auto;
-      overflow: unset;
+      margin: 0;
+      left: 0;
+      right: 0;
       p {
         padding: 0;
       }
@@ -108,12 +105,6 @@
   text-decoration: none;
   color: @brand-primary;
   background-color: @gray-lightest;
-}
-
-.dropdown-menu {
-  overflow-y: auto;
-  right: .1rem;
-  margin: .1rem 0 0;
 }
 
 // Navigation
