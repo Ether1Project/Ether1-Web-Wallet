@@ -4,7 +4,7 @@ nodes.customNode = require('./nodeHelpers/customNode');
 nodes.infuraNode = require('./nodeHelpers/infura');
 nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
-    ETHO: "Ether-1"
+    ETHO: "ETHO"
 };
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
 nodes.ensSubNodeTypes = [nodes.nodeTypes.ETH];
