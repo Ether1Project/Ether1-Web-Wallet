@@ -26,8 +26,8 @@
 <meta name="googlebot" content="index,follow">
 <meta name="google-site-verification" content="IpChQ00NYUQuNs_7Xs6xlnSdzalOlTUYbBsr8f7OpvM" />
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.ether1.org/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.ether1.org/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.ether1.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
 <link rel="manifest" href="https://www.ether1.org/site.webmanifest">
 <link rel="mask-icon" href="https://www.ether1.org/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -97,7 +97,7 @@
    <div id="logoPicture">
     @@if (site === 'mew' ) {
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="https://www.ether1.org/images/logo.png" alt="Ether1" />
+        <img src="images/logo.png" alt="Ether1" />
         <p class="small visible-xs">1.0.1</p>
       </a>
     }
