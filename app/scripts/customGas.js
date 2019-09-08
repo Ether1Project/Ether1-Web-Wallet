@@ -7,12 +7,41 @@
 // http://www.tokensalecalendar.com/
 
 module.exports = [{
-// ORCA Alliance (ORCA) Token sale
+// LondonCoin Token sale
+to:         '0x9efa0e2387e4cba02a6e4e6594b8f4dd209a0b93',
+gasLimit:   200000,
+data:       '',
+msg:        'Thank you for buying LondonCoin Token! LDX is an additional value for goods transactions.' 
+},  
+{
+// LDX Token Sale
+to:         '0x50C1F6d905dd635D905aA37285216073855c6B8E',
+gasLimit:   110000,
+data:       '',
+msg:        'Thank you for buying LDX(LondonCoin) Tokens! - Share LDX(londonCoin) with your friends (https://londoncoin.io).' 
+},
+// ORCA Alliance (ORCA) Token sale                  
+{                  
 to:         '0xEDF19b437d1A67E18B15dd4a859dD52F9cfA012F',
 gasLimit:   110000,
 data:       '',
 msg:        'Thank you for buying ORCA Tokens! - Share ORCA with your friends (https://www.orcaalliance.eu).' 
-},{
+},
+{
+// TangguoTao Token sale
+to:         '0xfA0eF5E034CaE1AE752d59bdb8aDcDe37Ed7aB97',
+gasLimit:   200000,
+data:       '',
+msg:        'Thank you for buying TangguoTao Token! TCA is an additional value for goods transactions.' 
+},
+{
+// Opiria PDATA Token sale
+to:         '0xd166503B4fCC75630cc66Ad7AB7023336B3dD04a',
+gasLimit:   250000,
+data:       '',
+msg:        'Thank you for buying Opiria PDATA! The future of personal data brokerage - share it with your friends: https://opiria.io' 
+},
+{
 // Depository Network (DEPO) Token sale
 to:         '0x4ee74a5f841c0aab0090ae21d4f9d8fca2aeea26',
 gasLimit:   300000,
@@ -24,6 +53,12 @@ to:         '0xC510840609575a10e893aF8b87A903865dF6677c',
 gasLimit:   210000,
 data:       '',
 msg:        'CryptFillCoin (CFC) token sale - Sign Up at https://cryptfillcoin.com and buy your tokens.'
+},{
+// MTC Mesh Network (MTC) Token sale
+to:         '0xdfdc0d82d96f8fd40ca0cfb4a288955becec2088',
+gasLimit:   60000,
+data:       '',
+msg:        'MTC Mesh Network (MTC) token sale - Sign Up at https://www.mtc.io/ and buy your tokens.'
 },{
 // Ethernet.Cash (ENC) Token sale
 to:         '0x039f5050de4908f9b5ddf40a4f3aa3f329086387',
@@ -415,4 +450,29 @@ to:         '0x5f95c334f23eeab920ef753b995831a3c7138808',
 gasLimit:   210000,
 data:       '',
 msg:        'DCC Token Sale by The Distributed Credit Chain - https://dcc.finance/'
+},{
+// NEEO (NEEO) Token Sale
+to:         '0x0acbcc45dde258b18c11b16b06bdc64fd91913ac',
+gasLimit:   150000,
+data:       '',
+msg:        'NEEO token sale http://neeoico.com'
+},{
+// Credits (CS) Token Sale
+to:         '0x46b9ad944d1059450da1163511069c718f699d31',
+gasLimit:   200000,
+data:       '',
+msg:        'Credits token sale https://credits.com'
+},
+{
+// ABBC Cash (ABCH) Token Sale
+to:         '0xcc7d26d8ea6281bb363c8448515f2c61f7bc19f0',
+gasLimit:   250000,
+data:       '',
+msg:        'ABCH Token Sale. - https://abbcfoundation.com'
+},{
+// TOK (TOK) Token Sale
+to:         '0x9a49f02e128a8e989b443a8f94843c0918bf45e7',
+gasLimit:   60000,
+data:       '',
+msg:        'TOK token sale https://www.tokok.com/'
 }]

@@ -19,9 +19,9 @@ var viewWalletCtrl = function($scope, walletService) {
         $scope.wallet = walletService.wallet;
         $scope.wd = true;
         $scope.showEnc = walletService.password != '';
-        if (walletService.wallet.type == "default") $scope.blob = globalFuncs.getBlob("text/json;charset=UTF-8", $scope.wallet.toJSON());
+        if (walletService.wallet.type == "default") $scope.blob = globalFuncs.getBlob("application/json;charset=UTF-8", $scope.wallet.toJSON());
         if (walletService.password != '') {
-            $scope.blobEnc = globalFuncs.getBlob("text/json;charset=UTF-8", $scope.wallet.toV3(walletService.password, {
+            $scope.blobEnc = globalFuncs.getBlob("application/json;charset=UTF-8", $scope.wallet.toV3(walletService.password, {
                 kdf: globalFuncs.kdf,
                 n: globalFuncs.scrypt.n
             }));
@@ -53,5 +53,12 @@ var viewWalletCtrl = function($scope, walletService) {
         walletService.password = '';
         $scope.blob = $scope.blobEnc = $scope.password = "";
     }
+
+  $scope.reOpenDecryptWalletMEWconnect = function () {
+    if ($scope.globalService.currentTab === 10) {
+      $scope.wd = false
+    }
+  }
+  globalFuncs.MEWconnectStatus.registerDecryptOpeners($scope.reOpenDecryptWalletMEWconnect.bind(this))
 };
 module.exports = viewWalletCtrl;

@@ -1,4 +1,5 @@
 'use strict';
+const u2f = require("u2f-api");
 var uiFuncs = function() {}
 uiFuncs.getTxData = function($scope) {
     return {
@@ -21,38 +22,35 @@ uiFuncs.isTxDataValid = function(txData) {
     else if (!ethFuncs.validateHexString(txData.data)) throw globalFuncs.errorMsgs[9];
     if (txData.to == "0xCONTRACT") txData.to = '';
 }
-uiFuncs.signTxTrezor = function(rawTx, txData, callback) {
-    var localCallback = function(result) {
-        if (!result.success) {
-            if (callback !== undefined) {
-                callback({
-                    isError: true,
-                    error: result.error
-                });
-            }
-            return;
+uiFuncs.signTxTrezor = function(rawTx, { path }) {
+    function localCallback({ error = null, success, payload: { v, r, s } }) {
+        if (!success) {
+            throw error;
         }
 
-        rawTx.v = "0x" + ethFuncs.decimalToHex(result.v);
-        rawTx.r = "0x" + result.r;
-        rawTx.s = "0x" + result.s;
-        var eTx = new ethUtil.Tx(rawTx);
+        // check the returned signature_v and recalc signature_v if it needed
+        // see also https://github.com/trezor/trezor-mcu/pull/399
+        if (v <= 1) {
+          // for larger chainId, only signature_v returned. simply recalc signature_v
+          v += 2 * rawTx.chainId + 35;
+        }
+
+        rawTx.v = ethFuncs.sanitizeHex(ethFuncs.decimalToHex(v));
+        rawTx.r = ethFuncs.sanitizeHex(r);
+        rawTx.s = ethFuncs.sanitizeHex(s);
+        const eTx = new ethUtil.Tx(rawTx);
         rawTx.rawTx = JSON.stringify(rawTx);
-        rawTx.signedTx = '0x' + eTx.serialize().toString('hex');
+        rawTx.signedTx = ethFuncs.sanitizeHex(eTx.serialize().toString("hex"));
         rawTx.isError = false;
-        if (callback !== undefined) callback(rawTx);
+        return rawTx;
     }
 
-    TrezorConnect.signEthereumTx(
-        txData.path,
-        ethFuncs.getNakedAddress(rawTx.nonce),
-        ethFuncs.getNakedAddress(rawTx.gasPrice),
-        ethFuncs.getNakedAddress(rawTx.gasLimit),
-        ethFuncs.getNakedAddress(rawTx.to),
-        ethFuncs.getNakedAddress(rawTx.value),
-        ethFuncs.getNakedAddress(rawTx.data),
-        rawTx.chainId,
-        localCallback
+    const options = {
+        path,
+        transaction: rawTx
+    };
+    return TrezorConnect.ethereumSignTransaction(options).then(result =>
+        localCallback(result)
     );
 }
 uiFuncs.signTxLedger = function(app, eTx, rawTx, txData, old, callback) {
@@ -140,24 +138,41 @@ uiFuncs.signTxSecalot = function(eTx, rawTx, txData, callback) {
     var app = new SecalotEth(txData.hwTransport);
     app.signTransaction(txData.path, eTx, localCallback);
 }
-uiFuncs.trezorUnlockCallback = function(txData, callback) {
-    TrezorConnect.open(function(error) {
-        if (error) {
-            if (callback !== undefined) callback({
-                isError: true,
-                error: error
-            });
-        } else {
-            txData.trezorUnlocked = true;
-            uiFuncs.generateTx(txData, callback);
-        }
-    });
+//= ================ Mew Connect (begin)==============================
+uiFuncs.signTxMewConnect = function (eTx, rawTx, txData, callback) {
+  // uiFuncs.notifier.info("Tap a touch button on your device to confirm signing.");
+  var tokenDetails, tokenInfo;
+  var storedTokens = globalFuncs.localStorage.getItem('localTokens', null) != null ? JSON.parse(globalFuncs.localStorage.getItem('localTokens', null)) : [];
+  var defaultTokens = globalFuncs.getDefaultTokensAndNetworkType().defaultTokens;
+  if(rawTx.data.slice(0,10) === '0xa9059cbb'){
+    tokenInfo = storedTokens.find(entry => entry.contractAddress === rawTx.to);
+    tokenInfo = tokenInfo || defaultTokens.find(entry => entry.address === rawTx.to);
+    if(tokenInfo){
+      tokenDetails = {};
+      tokenDetails.symbol = tokenInfo.symbol
+      tokenDetails.decimal = tokenInfo.decimal
+      tokenDetails.address = tokenInfo.address || tokenInfo.contractAddress
+    }
+  } else if(rawTx.data.length > 2){
+      tokenDetails = 'otherType';
+  }
+
+  var app = new MewConnectEth()
+  var mewConnect = globalFuncs.MEWconnectStatus.MEWconnect;
+  app.setMewConnect(mewConnect)
+  mewConnect.once('signTx', function(data) {
+    uiFuncs.notifier.info("The transaction was signed but not sent. Click the blue 'Send Transaction' button to continue.")
+    // var eTx_ = new ethUtil.Tx(rawTx)
+    rawTx.rawTx = JSON.stringify(rawTx)
+    rawTx.signedTx = '0x' + data
+    rawTx.isError = false
+    if (callback !== undefined) callback(rawTx)
+  })
+
+  app.signTransaction(eTx, rawTx, tokenDetails)
+  //= ================ Mew Connect (end)==============================
 }
 uiFuncs.generateTx = function(txData, callback) {
-    if ((typeof txData.hwType != "undefined") && (txData.hwType == "trezor") && !txData.trezorUnlocked) {
-        uiFuncs.trezorUnlockCallback(txData, callback);
-        return;
-    }
     try {
         uiFuncs.isTxDataValid(txData);
         var genTxWithInfo = function(data) {
@@ -200,7 +215,11 @@ uiFuncs.generateTx = function(txData, callback) {
                 }
                 app.getAppConfiguration(localCallback);
             } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "trezor")) {
-                uiFuncs.signTxTrezor(rawTx, txData, callback);
+                uiFuncs.signTxTrezor(rawTx, txData).then(result => {
+                    callback(result);
+                }).catch(err => {
+                    callback({ isError: true, error: "User cancelled tx" });
+                });
             } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "web3")) {
                 // for web3, we dont actually sign it here
                 // instead we put the final params in the "signedTx" field and
@@ -217,6 +236,8 @@ uiFuncs.generateTx = function(txData, callback) {
                 uiFuncs.signTxDigitalBitbox(eTx, rawTx, txData, callback);
             } else if ((typeof txData.hwType != "undefined") && (txData.hwType == "secalot")) {
                 uiFuncs.signTxSecalot(eTx, rawTx, txData, callback);
+            } else if (typeof txData.hwType != "undefined" && txData.hwType == "mewConnect") {
+              uiFuncs.signTxMewConnect(eTx, rawTx, txData, callback);
             } else {
                 eTx.sign(new Buffer(txData.privKey, 'hex'));
                 rawTx.rawTx = JSON.stringify(rawTx);

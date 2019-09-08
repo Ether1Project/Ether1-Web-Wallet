@@ -8,7 +8,7 @@ var customNode = function(srvrUrl, port, httpBasicAuthentication) {
 }
 customNode.prototype.config = {
     headers: {
-        'Content-Type': 'application/json; charset=UTF-8'
+        'Content-Type': 'application/json'
     }
 };
 
@@ -106,7 +106,7 @@ customNode.prototype.getEthCall = function(txobj, callback) {
             });
         }, 500);
     }
-    ethCallArr.calls.push({ "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_call", "params": [{ to: txobj.to, data: txobj.data }, 'pending'] });
+    ethCallArr.calls.push({ "id": parentObj.getRandomID(), "jsonrpc": "2.0", "method": "eth_call", "params": [{ to: txobj.to, data: txobj.data }, 'latest'] });
     ethCallArr.callbacks.push(callback);
 }
 customNode.prototype.getTraceCall = function(txobj, callback) {
