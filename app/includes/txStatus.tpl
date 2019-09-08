@@ -79,7 +79,7 @@
               TX Hash
             </td>
             <td>
-              <a href="https://etherscan.io/tx/{{ txInfo.hash }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ txInfo.txExplorerUrl }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.hash }}
               </a>
             </td>
@@ -89,7 +89,7 @@
               From Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.from }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ txInfo.fromExplorerUrl }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.from }}
               </a>
             </td>
@@ -99,7 +99,7 @@
               To Address
             </td>
             <td>
-              <a href="https://etherscan.io/address/{{ txInfo.to }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ txInfo.toExplorerUrl }}" target="_blank" rel="noopener noreferrer">
                 {{ txInfo.to }}
               </a>
             </td>
@@ -115,7 +115,7 @@
           <tr>
             <td>
               <a class="account-help-icon"
-                 href="https://myetherwallet.github.io/knowledge-base/transactions/what-is-nonce.html"
+                 href="https://kb.myetherwallet.com/transactions/what-is-nonce.html"
                  target="_blank"
                  rel="noopener noreferrer">
                    <img src="images/icon-help.svg" class="help-icon" />
@@ -132,7 +132,7 @@
           <tr>
             <td>
               <a class="account-help-icon"
-                 href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html"
+                 href="https://kb.myetherwallet.com/gas/what-is-gas-ethereum.html"
                  target="_blank"
                  rel="noopener noreferrer">
                     <img src="images/icon-help.svg" class="help-icon" />
@@ -149,7 +149,7 @@
           <tr>
             <td>
               <a class="account-help-icon"
-                 href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html"
+                 href="https://kb.myetherwallet.com/gas/what-is-gas-ethereum.html"
                  target="_blank"
                  rel="noopener noreferrer">
                    <img src="images/icon-help.svg" class="help-icon" />
@@ -170,7 +170,7 @@
           <tr>
             <td>
               <a class="account-help-icon"
-                 href="https://myetherwallet.github.io/knowledge-base/gas/what-is-gas-ethereum.html"
+                 href="https://kb.myetherwallet.com/gas/what-is-gas-ethereum.html"
                  target="_blank"
                  rel="noopener noreferrer">
                    <img src="images/icon-help.svg" class="help-icon" />

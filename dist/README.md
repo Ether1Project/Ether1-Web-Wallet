@@ -13,8 +13,8 @@ Check gh-pages files against live website at https://www.myetherwallet.com
 
 | File Name| Status|
 |---|---|
-| index.html |![embedded.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/index.html&remoteFile=https://www.myetherwallet.com/index.html)| 
-| embedded.html |![embedded.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/embedded.html&remoteFile=https://www.myetherwallet.com/embedded.html)|  
+| index.html |![embedded.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/index.html&remoteFile=https://www.myetherwallet.com/index.html)|
+| embedded.html |![embedded.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/embedded.html&remoteFile=https://www.myetherwallet.com/embedded.html)|
 | helpers.html |![embedded.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/helpers.html&remoteFile=https://www.myetherwallet.com/helpers.html)|
 | signmsg.html |![signmsg.html](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/signmsg.html&remoteFile=https://www.myetherwallet.com/signmsg.html)|
 | bin/startMEW.js |![startMEW.js](https://filechecker.myetherwallet.com/check?localFile=https://raw.githubusercontent.com/kvhnuke/etherwallet/gh-pages/bin/startMEW.js&remoteFile=https://www.myetherwallet.com/bin/startMEW.js)|
@@ -52,7 +52,7 @@ Check gh-pages files against live website at https://www.myetherwallet.com
 
 ### `mercury` is the development branch. gh-pages contains only the smaller dist folder only and is served to MyEtherWallet.com
 
-- Our infrastructure ("node") is on AWS. [You can also use your own node.](https://myetherwallet.github.io/knowledge-base/networks/run-your-own-node-with-myetherwallet.html)
+- Our infrastructure ("node") is on AWS. [You can also use your own node.](https://kb.myetherwallet.com/networks/run-your-own-node-with-myetherwallet.html)
 - We also provide access to Infura.io & Etherscan.io nodes. Use the drop-down in the top-right.
 
 
@@ -64,10 +64,10 @@ Check gh-pages files against live website at https://www.myetherwallet.com
 #### Features
 
 - Create new wallets completely client side.
-- Access your wallet via unencrypted private key, encrypted private key, keystore files, mnemonics, or Digital Bitbox, Ledger Nano S or TREZOR hardware wallet.
+- Access your wallet via unencrypted private key, encrypted private key, keystore files, mnemonics, or BitBox, Ledger Nano S or TREZOR hardware wallet.
 - Easily send ETH and *any* ERC-20 Standard Token. [Many tokens included as default.](https://myetherwallet.groovehq.com/knowledge_base/topics/can-i-send-my-steem-slash-btc-slash-ltc-slash-nem-slash-to-myetherwallet)
 - Generate, sign & send transactions offline, ensuring your private keys never touch an internet-connected device.
-- Securely access your ETH & Tokens on your [Digital Bitbox, Ledger or TREZOR Hardware Wallet](https://myetherwallet.groovehq.com/knowledge_base/topics/hardware-wallet-recommends) via the MyEtherWallet interface (Chrome & Opera natively, Firefox w/ [add-on](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/))
+- Securely access your ETH & Tokens on your [BitBox, Ledger or TREZOR Hardware Wallet](https://myetherwallet.groovehq.com/knowledge_base/topics/hardware-wallet-recommends) via the MyEtherWallet interface (Chrome & Opera natively, Firefox w/ [add-on](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/))
 - Now in 18 languages thanks 100% to the amazing Ethereum community.
 - Supports URI Strings on Send Transaction Page.
     - to=[address]
@@ -84,7 +84,7 @@ Check gh-pages files against live website at https://www.myetherwallet.com
 ### Our Philosophy
 
  - **Empower the people**: Give people the ability to interact with the Ethereum blockchain easily, without having to run a full node.
- - **Make it easy & free**: Everyone should be able to create a wallet and send Ether & Tokens without additional cost.
+ - **Make it easy & free**: Everyone should be able to create a wallet and Send XERO & Tokens without additional cost.
  - **People are the Priority**: People are the most important & their experience trumps all else. If monetization worsens the experience, we don't do it. (e.g. ads)
  - **A learning experience, too**: We want to educate about Ethereum, security, privacy, the importance of controlling your own keys, how the blockchain works, and how Ethereum and blockchain technologies enable a better world.
  - **If it can be hacked, it will be hacked**: Never save, store, or transmit secret info, like passwords or keys.
@@ -97,7 +97,7 @@ Check gh-pages files against live website at https://www.myetherwallet.com
 
 ### Users (non-developers)
 
-- [It is recommended you start here.](https://myetherwallet.github.io/knowledge-base/getting-started/getting-started-new.html)
+- [It is recommended you start here.](https://kb.myetherwallet.com/getting-started/getting-started-new.html)
 - You can run MyEtherWallet.com on your computer. You can create a wallet completely offline & send transactions from the "Offline Transaction" page.
 
 1. Go to https://github.com/kvhnuke/etherwallet/releases/latest.
@@ -123,7 +123,6 @@ If you want to help contribute, here's what you need to know to get it up and ru
 - We use angular and bootstrap. We used to use jQuery and Bootstrap until it was converted in April 2016. If you wonder why some things are set up funky, that's why.
 - The mercury branch is currently the active development branch. We then push the dist folder live to gh-pages, which then gets served to MyEtherWallet.com.
 - We use npm / gulp for compiling. There is a lot of stuff happening in the compilation.
-- Old node setups can be found in in `json_relay_node` (node.js) & `json_relay_php` (php). These are great resources for developers looking to get started and launch a public node on a $40 Linode instance.
 
 **Getting Started**
 
@@ -156,7 +155,7 @@ If you want to help contribute, here's what you need to know to get it up and ru
 
 - [Setting up on AWS super easily.](https://github.com/MyEtherWallet/docker-geth-lb)
 
-- [Running MyEtherWallet w/ Your Own Personal Node](https://myetherwallet.github.io/knowledge-base/networks/run-your-own-node-with-myetherwallet.html)
+- [Running MyEtherWallet w/ Your Own Personal Node](https://kb.myetherwallet.com/networks/run-your-own-node-with-myetherwallet.html)
 
 - [Guide by benjaminion for MEW + Ledger Nano S + Local Parity Node](https://github.com/benjaminion/eth-parity-qnap/wiki/Connecting-to-MyEtherWallet)
 

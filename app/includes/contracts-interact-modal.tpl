@@ -27,7 +27,7 @@
               Amount
             </span>
             <em translate="SEND_Helper_Contract">
-              In most cases you should leave this as 0.
+              In most cases you should leave this as 0. (If you are deploying a node then you must enter the correct amount of collateral) (If you are deploying a node then you must enter the correct amount of collateral)
             </em>
           </label>
           <input class="form-control"
@@ -83,4 +83,3 @@
     </section>
   </section>
 </article>
-

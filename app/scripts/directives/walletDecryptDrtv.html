@@ -19,6 +19,18 @@
         View w/ Address Only
     </label>
 
+    <!-- MEWconnect -->
+    <label
+      class="radio"><!-- todo re-add aria-flowto="aria10" property -->
+      <input type="radio"
+             aria-label="MEW Connect"
+             ng-model="walletType"
+             value="mewConnect"/>
+      <span><!-- todo re-add translation property -->
+       <img src="images/MEWconnectLogo.svg" width="120" height="26">
+      </span>
+    </label>
+
     <!-- MetaMask -->
     <label aria-flowto="aria2"
            class="radio">
@@ -35,7 +47,7 @@
     <!-- Ledger -->
     <label aria-flowto="aria3"
            class="radio"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'||ajaxReq.type=='ESN'||ajaxReq.type=='AKROMA'||ajaxReq.type=='ETHO'">
+           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'||ajaxReq.type=='ESN'||ajaxReq.type=='AKA'||ajaxReq.type=='PIRL'||ajaxReq.type=='ETHO'||ajaxReq.type=='EGEM'||ajaxReq.type=='CLO'||ajaxReq.type=='ATH'||ajaxReq.type=='MUSIC'||ajaxReq.type=='EOSC'||ajaxReq.type=='GO'||ajaxReq.type=='MIX'||ajaxReq.type=='ILT'||ajaxReq.type=='ELLA'||ajaxReq.type=='REOSC'||ajaxReq.type=='THUNDERCORE'||ajaxReq.type=='XERO'">
       <input aria-flowto="aria3"
              type="radio"
              aria-label="Ledger Hardware Wallet"
@@ -47,7 +59,7 @@
     <!-- TREZOR -->
     <label class="radio"
            aria-flowto="aria4"
-           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'||ajaxReq.type=='ELLA'||ajaxReq.type=='EGEM'||ajaxReq.type=='CLO'||ajaxReq.type=='ETSC'||ajaxReq.type=='MUSIC'||ajaxReq.type=='GO'||ajaxReq.type=='EOSC'||ajaxReq.type=='AKROMA'||ajaxReq.type=='ESN'">
+           ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='POA'||ajaxReq.type=='TOMO'||ajaxReq.type=='ELLA'||ajaxReq.type=='EGEM'||ajaxReq.type=='CLO'||ajaxReq.type=='ETSC'||ajaxReq.type=='MUSIC'||ajaxReq.type=='GO'||ajaxReq.type=='EOSC'||ajaxReq.type=='AKA'||ajaxReq.type=='ESN'||ajaxReq.type=='PIRL'||ajaxReq.type=='ETHO'||ajaxReq.type=='ATH'||ajaxReq.type=='MIX'||ajaxReq.type=='ILT'||ajaxReq.type=='REOSC'||ajaxReq.type=='XERO'">
       <input aria-flowto="aria4"
              type="radio"
              aria-label="Trezor Hardware Wallet"
@@ -62,10 +74,10 @@
            ng-show="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'">
       <input aria-flowto="aria5"
              type="radio"
-             aria-label="Digital Bitbox hardware wallet"
+             aria-label="BitBox hardware wallet"
              ng-model="walletType"
              value="digitalBitbox"/>
-      Digital Bitbox
+      BitBox
     </label>
 
     <!-- Secalot -->
@@ -89,7 +101,7 @@
              ng-model="walletType"
              value="fileupload" />
       Keystore / JSON File
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
+      <a href="https://kb.myetherwallet.com/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
          target="_blank"
          rel="noopener noreferrer">
         <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
@@ -107,7 +119,7 @@
       <span translate="x_Mnemonic">
         Mnemonic Phrase
       </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
+      <a href="https://kb.myetherwallet.com/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
          target="_blank"
          rel="noopener noreferrer">
         <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
@@ -125,7 +137,7 @@
       <span translate="x_PrivKey2">
         Private Key
       </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
+      <a href="https://kb.myetherwallet.com/private-keys-passwords/difference-beween-private-key-and-keystore-file.html"
          target="_blank"
          rel="noopener noreferrer">
         <img src="images/icon-help-3.svg" width="16px" height="16px" style="margin: 0 5px 5px">
@@ -152,7 +164,7 @@
       <span translate="x_ParityPhrase">
         Parity Phrase
       </span>
-      <a href="https://myetherwallet.github.io/knowledge-base/private-keys-passwords/parity-phrases-are-no-longer-supported.html"
+      <a href="https://kb.myetherwallet.com/private-keys-passwords/parity-phrases-are-no-longer-supported.html"
          target="_blank"
          rel="noopener noreferrer">
            <img src="images/icon-help-2.svg" width="16px" height="16px" style="margin: 0 5px 5px">
@@ -217,7 +229,7 @@
       <ul>
         <li class="u__protip">
           <a tabindex="0"
-             href="https://myetherwallet.github.io/knowledge-base/migration/moving-from-private-key-to-metamask.html"
+             href="https://kb.myetherwallet.com/migration/moving-from-private-key-to-metamask.html"
              target="_blank"
              rel="noopener noreferrer">
                 How to Move to MetaMask
@@ -282,13 +294,16 @@
           </a>
         </li>
         <li class="u__protip">
-          <a href="https://www.ledgerwallet.com/r/fa4b?path=/products/"
+          <a href="https://www.ledger.com/products/ledger-nano-s?r=fa4b"
              target="_blank"
              rel="noopener noreferrer">
                 Don't have a Ledger? Get one today.
           </a>
         </li>
       </ul>
+      <div ng-show="!supported" class="unsupported">
+        U2F not supported in this browser. Please try using Google Chrome with a secure (SSL / HTTPS) connection!
+      </div>
       <div class="form-group">
         <a class="btn btn-primary"
            ng-click="scanLedger()"
@@ -320,7 +335,7 @@
             </span>
           </li>
           <li>
-            <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/ledger-hardware-wallet-unable-to-connect-on-myetherwallet.html"
+            <a href="https://kb.myetherwallet.com/hardware-wallets/ledger-hardware-wallet-unable-to-connect-on-myetherwallet.html"
              target="_blank"
              rel="noopener noreferrer">
                 Still not working? More Troubleshooting Tips
@@ -383,7 +398,7 @@
                 Ensure you are not blocking pop-ups on this site.
           </li>
           <li>
-            <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/"
+            <a href="https://kb.myetherwallet.com/hardware-wallets/"
              target="_blank"
              rel="noopener noreferrer">
                 Still not working? More Troubleshooting Tips
@@ -398,7 +413,7 @@
     <!--  Digital Bitbox-->
     <div id="selectedTypeDigitalBitbox" ng-if="walletType=='digitalBitbox'">
       <h4>
-        Digital Bitbox Hardware Wallet
+        BitBox Hardware Wallet
       </h4>
       <h5>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 79.536 79.536"><path fill="#5dba5a" d="M39.769 0C17.8 0 0 17.8 0 39.768c0 21.965 17.8 39.768 39.769 39.768 21.965 0 39.768-17.803 39.768-39.768C79.536 17.8 61.733 0 39.769 0zm-5.627 58.513L15.397 39.768l7.498-7.498 11.247 11.247 22.497-22.493 7.498 7.498-29.995 29.991z"/></svg>
@@ -409,31 +424,31 @@
       </div>
       <ul>
         <li class="u__protip">
-          <a href="https://digitalbitbox.com/ethereum"
+          <a href="https://shiftcrypto.ch/ethereum"
              target="_blank"
              rel="noopener noreferrer">
-               How to use Digital Bitbox with MyEtherWallet
+               How to use BitBox with MyEtherWallet
           </a>
         </li>
         <li class="u__protip">
-          <a href="https://digitalbitbox.com/?ref=mew"
+          <a href="https://shiftcrypto.ch/?ref=mew"
              target="_blank"
              rel="noopener noreferrer">
-                Don't have a Digital Bitbox? Get one now.
+                Don't have a BitBox? Get one now.
           </a>
         </li>
       </ul>
       <input class="form-control"
-             aria-label="Enter the Digital Bitbox password"
+             aria-label="Enter the BitBox password"
              aria-describedby="selectedTypeDigitalBitbox"
              type="password"
-             placeholder="Digital Bitbox password"
+             placeholder="BitBox password"
              spellcheck="false"
              value=""
              ng-model="HDWallet.digitalBitboxSecret" />
       <div class="form-group">
         <a tabindex="0" role="button" class="btn btn-primary" ng-click="scanDigitalBitbox()" translate="ADD_DigitalBitbox_scan">
-          Connect your Digital Bitbox
+          Connect your BitBox
         </a>
       </div>
     </div>
@@ -484,6 +499,82 @@
     </div>
     <!-- / Secalot-->
 
+    <!--  Mew Connect -->
+    <!-------------------------------  Mew Connect (Start) ------------------------------------------>
+    <!-- Based Off MetaMask Code (above)-->
+    <div id="selectedTypeMewConnect"
+         ng-if="walletType=='mewConnect'">
+      <h4> <!-- todo re-add translation property -->
+           MEWconnect
+      </h4>
+      <div ng-if="!canUseMewConnect || mewConnectMayFail.noSupport">
+        MEWconnect does not support your browser. <br/> Please use a supported browser (<a href="http://chrome.google.com/">Chrome</a>, <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, <a href="http://www.opera.com/">Opera</a>, Safari (version 11 and above))
+      </div>
+      <div ng-if="canUseMewConnect && !mewConnectMayFail.noSupport">
+        <ul>
+          <li class="u__protip">
+            <!-- Todo add path  -->
+            <a href="https://kb.myetherwallet.com/getting-started/mew-connect-user-guide.html"
+               target="_blank"
+               rel="noopener noreferrer">
+              How to use MEWconnect with MyEtherWallet
+            </a>
+          </li>
+          <li class="u__protip">
+            <!-- Todo add path  -->
+            <p>
+              Don't have MEWconnect?
+            </p>
+            <a href="https://itunes.apple.com/us/app/mewconnect/id1391097156"  target="_blank" rel="noopener noreferrer">
+              <img src="images/appstore.svg" height="50">
+            </a>
+            <a href="http://play.google.com/store/apps/details?id=com.myetherwallet.mewconnect"  target="_blank" rel="noopener noreferrer">
+              <img src="images/google-play.svg" height="50">
+            </a>
+          </li>
+        </ul>
+        <div class="form-group"
+             ng-hide="isSSL">
+        <span class="text-danger"> <!-- todo re-add translation property -->
+            MEWconnect only works on a secure (SSL / HTTPS) connection.
+        </span>
+        </div>
+        <div class="form-group" ng-show="(!mewConnectionStatus || mewConnectionStatus == 3 || mewConnectionStatus == 4) && canUseMewConnect">
+          <!-- todo re-add translation  and id properties -->
+          <a class="btn btn-primary"
+             ng-click="scanMewConnect()"
+             ng-show="walletType=='mewConnect'"
+             tabindex="0" role="button">
+            Connect with MEWconnect
+          </a>
+        </div>
+        <div class="form-group" ng-show="(mewConnectionStatus == 2) && canUseMewConnect">
+          <!-- todo re-add translation  and id properties -->
+          <a class="btn btn-primary"
+             ng-click="mewConnectDisconnect()"
+             ng-show="walletType=='mewConnect'"
+             tabindex="0" role="button">
+            Disconnect from MEWconnect
+          </a>
+        </div>
+        <div class="form-group" >
+          <!-- todo re-add translation  and id properties -->
+          <h5 ng-show="mewConnectionStatus == 1">Scan this code with your <a href="https://mewconnect.myetherwallet.com">MEWconnect app</a></h5>
+        </div>
+        <div ng-if="mewConnectionStatus == 1">
+          <div qr-code="{{mewConnectCode}}" watch-var="mewConnectCode" style="width: 200px; height: 200px"></div>
+        </div>
+
+        <div ng-if="mewConnectMayFail.status && !mewConnectMayFail.noSupport">
+          <br/>
+          MEWconnect does not fully support your browser [{{mewConnectMayFail.browser}} {{mewConnectMayFail.version}}] and may not work.  <br/> Please use a fully supported browser (<a href="http://chrome.google.com/">Chrome </a>, <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>, <a href="http://www.opera.com/">Opera</a>)
+        </div>
+      </div>
+
+
+    </div>
+    <!-------------------------------  Mew Connect (End) ------------------------------------------>
+    <!-- / Mew Connect -->
 
     <!-- Keystore -->
     <div ng-if="walletType=='fileupload'">
@@ -497,26 +588,26 @@
       </div>
       <ul>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/migration/moving-from-private-key-to-metamask.html"
+          <a href="https://kb.myetherwallet.com/migration/moving-from-private-key-to-metamask.html"
              target="_blank"
              rel="noopener noreferrer">
               MetaMask
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html"
+          <a href="https://kb.myetherwallet.com/hardware-wallets/hardware-wallet-recommendations.html"
              target="_blank"
              rel="noopener noreferrer">
               A Hardware Wallet
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/offline/running-myetherwallet-locally.html"
+          <a href="https://kb.myetherwallet.com/offline/running-myetherwallet-locally.html"
              target="_blank"
              rel="noopener noreferrer">
               Running MEW Offline &amp; Locally
           </a>
         </li>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/security/securing-your-ethereum.html"
+          <a href="https://kb.myetherwallet.com/getting-started/protecting-yourself-and-your-funds.html"
              target="_blank"
              rel="noopener noreferrer">
               Learning How to Protect Yourself and Your Funds
@@ -524,7 +615,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://wallet.ether1.org</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">
@@ -573,26 +664,26 @@
       </div>
       <ul>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/migration/moving-from-private-key-to-metamask.html"
+          <a href="https://kb.myetherwallet.com/migration/moving-from-private-key-to-metamask.html"
              target="_blank"
              rel="noopener noreferrer">
               MetaMask
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html"
+          <a href="https://kb.myetherwallet.com/hardware-wallets/hardware-wallet-recommendations.html"
              target="_blank"
              rel="noopener noreferrer">
               A Hardware Wallet
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/offline/running-myetherwallet-locally.html"
+          <a href="https://kb.myetherwallet.com/offline/running-myetherwallet-locally.html"
              target="_blank"
              rel="noopener noreferrer">
               Running MEW Offline &amp; Locally
           </a>
         </li>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/security/securing-your-ethereum.html"
+          <a href="https://kb.myetherwallet.com/getting-started/protecting-yourself-and-your-funds.html"
              target="_blank"
              rel="noopener noreferrer">
               Learning How to Protect Yourself and Your Funds
@@ -600,7 +691,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://wallet.ether1.org</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">
@@ -654,26 +745,26 @@
       </div>
       <ul>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/migration/moving-from-private-key-to-metamask.html"
+          <a href="https://kb.myetherwallet.com/migration/moving-from-private-key-to-metamask.html"
              target="_blank"
              rel="noopener noreferrer">
               MetaMask
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html"
+          <a href="https://kb.myetherwallet.com/hardware-wallets/hardware-wallet-recommendations.html"
              target="_blank"
              rel="noopener noreferrer">
               A Hardware Wallet
           </a>
           or
-          <a href="https://myetherwallet.github.io/knowledge-base/offline/running-myetherwallet-locally.html"
+          <a href="https://kb.myetherwallet.com/offline/running-myetherwallet-locally.html"
              target="_blank"
              rel="noopener noreferrer">
               Running MEW Offline &amp; Locally
           </a>
         </li>
         <li>
-          <a href="https://myetherwallet.github.io/knowledge-base/security/securing-your-ethereum.html"
+          <a href="https://kb.myetherwallet.com/getting-started/protecting-yourself-and-your-funds.html"
              target="_blank"
              rel="noopener noreferrer">
               Learning How to Protect Yourself and Your Funds
@@ -681,7 +772,7 @@
         </li>
       </ul>
       <div class="form-group">
-        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://www.myetherwallet.com</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
+        If you must, please <u>double-check the URL &amp; SSL cert</u>. It should say <code>https://wallet.ether1.org</code> &amp; <code>MYETHERWALLET INC</code> in your URL bar.
       </div>
       <br />
       <div class="form-group">
@@ -769,7 +860,7 @@
           </h4>
 
           <p class="alert alert-danger"
-             ng-hide="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='ELLA'||ajaxReq.type=='EGEM'||ajaxReq.type=='CLO'||ajaxReq.type=='ETSC'||ajaxReq.type=='MUSIC'||ajaxReq.type=='GO'||ajaxReq.type=='EOSC'||ajaxReq.type=='POA'||ajaxReq.type=='AKROMA'||ajaxReq.type=='ESN'||ajaxReq.type=='ETHO'">
+             ng-hide="ajaxReq.type=='ETH'||ajaxReq.type=='ETC'||ajaxReq.type=='ROPSTEN ETH'||ajaxReq.type=='RINKEBY ETH'||ajaxReq.type=='KOVAN ETH'||ajaxReq.type=='EXP'||ajaxReq.type=='UBQ'||ajaxReq.type=='ELLA'||ajaxReq.type=='EGEM'||ajaxReq.type=='CLO'||ajaxReq.type=='ETSC'||ajaxReq.type=='MUSIC'||ajaxReq.type=='GO'||ajaxReq.type=='EOSC'||ajaxReq.type=='POA'||ajaxReq.type=='AKA'||ajaxReq.type=='ESN'||ajaxReq.type=='PIRL'||ajaxReq.type=='ETHO'||ajaxReq.type=='ATH'||ajaxReq.type=='MIX'||ajaxReq.type=='ILT'||ajaxReq.type=='REOSC'||ajaxReq.type=='THUNDERCORE'||ajaxReq.type=='XERO'">
                 We do not know the correct path for this network.
                 <a href="https://github.com/kvhnuke/etherwallet/issues"
                    target="_blank"
@@ -790,7 +881,7 @@
                       value="{{HDWallet.defaultDPath}}"/>
                 <span ng-bind="HDWallet.defaultDPath"></span>
                 <p class="small">
-                  Jaxx, Metamask, Exodus, imToken, TREZOR (ETH) &amp; Digital Bitbox
+                  Jaxx, Metamask, Exodus, imToken, TREZOR (ETH) &amp; BitBox
                 </p>
               </label>
             </div>
@@ -1020,6 +1111,18 @@
             </div>
 
             <div class="col-sm-4">
+                <label class="radio small">
+                    <input aria-describedby="Path: Ledger (PIRL) {{HDWallet.hwPirlPath}}"
+                           ng-change="onHDDPathChange()"
+                           ng-model="HDWallet.dPath"
+                           type="radio"
+                           value="{{HDWallet.hwPirlPath}}"/>
+                    <span ng-bind="HDWallet.hwPirlPath"></span>
+                    <p class="small">Network: PIRL</p>
+                </label>
+            </div>
+
+            <div class="col-sm-4">
               <label class="radio small">
                 <input aria-describedby="Path: TREZOR (ETHO) {{HDWallet.hwEther1Path}}"
                        ng-change="onHDDPathChange()"
@@ -1032,8 +1135,103 @@
                 </p>
               </label>
             </div>
-            
-            
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ATH) {{HDWallet.hwAtheiosPath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.hwAtheiosPath}}"/>
+                <span ng-bind="HDWallet.hwAtheiosPath"></span>
+                <p class="small">
+                  Network: Atheios (ATH)
+                </p>
+               </label>
+            </div>
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (TOMO) {{HDWallet.tomoPath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.tomoPath}}"/>
+                <span ng-bind="HDWallet.tomoPath"></span>
+                <p class="small">
+                  Network: TomoChain (TOMO)
+                </p>
+              </label>
+            </div>
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (MIX) {{HDWallet.hwMixPath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.hwMixPath}}"/>
+                <span ng-bind="HDWallet.hwMixPath"></span>
+                <p class="small">
+                  Network: Mix Blockchain (MIX)
+                </p>
+               </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (ILT) {{HDWallet.hwIolitePath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.hwIolitePath}}"/>
+                <span ng-bind="HDWallet.hwIolitePath"></span>
+                <p class="small">
+                  Network: Iolite (ILT)
+                </p>
+               </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (REOSC) {{HDWallet.hwReoscPath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.hwReoscPath}}"/>
+                <span ng-bind="HDWallet.hwReoscPath"></span>
+                <p class="small">
+                  Network: REOSC Ecosystem (REOSC)
+                </p>
+               </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: Ledger (THUNDERCORE) {{HDWallet.thundercorePath}}"
+                       ng-change="onHDDPathChange()"
+                       ng-model="HDWallet.dPath"
+                       type="radio"
+                       value="{{HDWallet.thundercorePath}}"/>
+                <span ng-bind="HDWallet.thundercorePath"></span>
+                <p class="small">
+                  Network: ThunderCore (TT)
+                </p>
+              </label>
+            </div>
+
+            <div class="col-sm-4">
+              <label class="radio small">
+                <input aria-describedby="Path: TREZOR (XERO) {{HDWallet.hwXeroPath}}"
+                        ng-change="onHDDPathChange()"
+                        ng-model="HDWallet.dPath"
+                        type="radio"
+                       value="{{HDWallet.hwXeroPath}}"/>
+                <span ng-bind="HDWallet.hwXeroPath"></span>
+                <p class="small">
+                  Network: Xerom (XERO)
+                </p>
+               </label>
+            </div>
+
             <div class="col-sm-4">
               <label class="radio small">
                 <p class="small"><strong>

@@ -36,7 +36,7 @@
     <ul class="account-info">
       <li ng-show="ajaxReq.type != 'CUS'">
         <a href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}" target="_blank" rel="noopener noreferrer">
-          {{ajaxReq.type}} ({{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}})
+          {{ajaxReq.type}} ({{ajaxReq.blockExplorerTX.match('://(.*?)/')[1]}})
         </a>
       </li>
       <li ng-show="ajaxReq.type == 'ETH'">
@@ -54,7 +54,7 @@
 
   <!-- Slider Thingy -->
   <!-- Hardware Wallets -->
-  <a href="https://myetherwallet.github.io/knowledge-base/getting-started/protecting-yourself-and-your-funds.html"
+  <a href="https://kb.myetherwallet.com/getting-started/protecting-yourself-and-your-funds.html"
      ng-show="slide==1 || ajaxReq.type!=='ETH'"
      class="block swap--hw"
      target="_blank" rel="noopener noreferrer">
@@ -134,7 +134,7 @@
 
 
     <h5 class="u__protip">
-      <a href="https://myetherwallet.github.io/knowledge-base/send/adding-new-token-and-sending-custom-tokens.html"
+      <a href="https://kb.myetherwallet.com/send/adding-new-token-and-sending-custom-tokens.html"
          rel="noopener noreferrer"
          target="_blank">
          How to See Your Tokens
@@ -147,7 +147,7 @@
          href="{{ajaxReq.blockExplorerAddr.replace('[[address]]', wallet.getAddressString())}}"
          target="_blank"
          rel="noopener noreferrer">
-          {{ajaxReq.blockExplorerTX.replace('/tx/[[txHash]]', '')}}
+          {{ajaxReq.blockExplorerTX.match('://(.*?)/')[1]}}
       </a>
       <span ng-show="ajaxReq.type == 'ETH'"> or
         <a href="https://ethplorer.io/address/{{wallet.getAddressString()}}"
